@@ -29,9 +29,24 @@ public class Zadatak2 {
 		// TODO Auto-generated method stub
 		//Novi Scanner
 		Scanner input=new Scanner (System.in);
+		boolean process=true;
+		int num=0;
 		//ispis poruke, unos 
-		System.out.println("Unesite broj pitanja");
-		int num=input.nextInt();
+		//do while petlja i try catch blok kako bi korisnik bio prinudjen da ponovi unos u slucaju pogreske
+				do{ try{ System.out.println("Unesite broj pitanja");
+				num=input.nextInt();
+				if(num>0)process=false;
+				else System.out.println("Unesite broj veci od 0");}
+				catch(Exception e){
+					System.out.println("Pogresan unos");
+					input.nextLine();}
+				}while(process);
+		
+		
+		
+		
+		
+		
 		//ispis poruke- rezultata
 		System.out.println("Broj tacnih odgovora iznosi "+Questions(num));
 		//Zatvaranje Scanner-a

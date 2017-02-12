@@ -23,9 +23,16 @@ public class Zadatak5 {
 		//Novi Scanner
 		Scanner input=new Scanner (System.in);
 		//Ispis poruke
-		System.out.println("Unesite broj bacanja novcica");
+		int num=1;
+		boolean process=true;
+		do{try{System.out.println("Unesite broj bacanja novcica(broj mora biti veci od nule)");
 		//Unos broja bacanja
-		int num=input.nextInt();
+		num=input.nextInt();
+		process=false;}
+		catch(Exception e){
+			System.out.println("Pogresan unos");
+			input.nextLine();
+		}}while(num<=0|| process);
 		//metodu pozivamo samo jednom, tu vrijednost dodjeljujemo varijabli pismo, broj bacenih nula
 		int pismo=coins(num);
 		//varijabli glava dodijeljujemo broj bacenih jedinica(glava), tj. od ukupnog broja bacanja oduzmemo broj onih koji prestavljaju pismo

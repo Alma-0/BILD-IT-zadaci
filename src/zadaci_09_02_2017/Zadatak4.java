@@ -20,10 +20,18 @@ public class Zadatak4 {
 		// TODO Auto-generated method stub
 		//Novi Scanner
 		Scanner input=new Scanner (System.in);
-		//ispis poruke
-		System.out.println("Unesite broj redova matrice");
-		//unos rezultata
-		int num=input.nextInt();
+		boolean process=true;
+		int num=0;
+		do{ try{ //ispis poruke
+			System.out.println("Unesite broj redova matrice");
+		num=input.nextInt();
+		if(num>0)process=false;
+		else System.out.println("Unesite broj veci od 0");}
+		catch(Exception e){
+			System.out.println("Pogresan unos");
+			input.nextLine();}
+		}while(process);
+		
 		//pozivanje metode
 		printMatrix(num);
 		//Zatvaranje Scanner-a
