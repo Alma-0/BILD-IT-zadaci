@@ -27,6 +27,7 @@ public class Zadatak1 {
 		double futValue =investment * (Math.pow((1 + interestRate/1200),numYears*12));
 		//ispis rezultata
 		System.out.printf("Buduca vrijednost investicije je %6.2f",futValue);
+		input.close();
 
 	}
 

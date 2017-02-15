@@ -15,18 +15,20 @@ public class Zadatak5 {
 		do{ try{ System.out.println("Unesite brzinu u m/s i ubrzanje u m/(s*s), respektivno (vrijednost mora biti veca od nule)");
 		 V=input.nextDouble();
 		 a=input.nextDouble();
-		process=false;}
+		process=false;
+		if(V<=0)System.out.println("Brzina mora biti veca od nule");
+		if(a<=0)System.out.println("Vrijednost mora biti veca od nule, unosite ubrzanje a ne usporenje");}
 		catch (Exception e){
 			//ispis u slucaju exception-a
 			System.out.println("Wrong input");
 			input.nextLine();}
+		
 		}while(process || V<=0 || a<=0);
 		//proracun duzine pomocu unesene brzine i ubrzanja
 		double s=(V*V)/(2*a);
 		//ispis rezultata
 		System.out.printf("Duzina piste je %6.3f m",s);
-
-
+		input.close();
 	}
 
 }

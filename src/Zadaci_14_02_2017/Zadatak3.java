@@ -15,6 +15,7 @@ public class Zadatak3 {
 		return result;
 	}
 	public static boolean isPalindrome(int number){
+		if(number<0) return false;
 		//ukoliko je uneseni broj jednak svojoj inverziji onda je on palindrom, vraca true
 		if (number==reverse(number))return true;
 		else return false;
@@ -26,17 +27,19 @@ public class Zadatak3 {
 		int num=0;
 		boolean process=true;
 		//kontrolisanje unosa podataka
-		do{ try{ System.out.println("Enter one number (positive)");
+		do{ try{ System.out.println("Enter one number ");
 		 num=input.nextInt();
-		process=false;}
+		process=false;
+		}
 		catch (Exception e){
 			//ispis u slucaju exception-a
 			System.out.println("Wrong input");
 			input.nextLine();}
-		}while(process || num<=0);
+		}while(process );
 		//poziv metode, ispis rezultata
-		System.out.println("Number is palindrome "+isPalindrome(num));
-		
+		System.out.println("Number is palindrome: "+isPalindrome(num));
+		if(num<0)System.out.println("Negative number isn't palindrome");
+		input.close();
 
 	}
 

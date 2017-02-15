@@ -19,7 +19,8 @@ public class Zadatak2 {
 		//manji broj num1, veci broj num2
 		if(num1>num2) {int temp=num2; num2=num1; num1=temp;}
 		process=false;
-		if( (num1<=0 || num2<=0)) System.out.println("Broj mora biti pozitivan, racunaju se samo godine poslije nove ere");}
+		if(num1==0 || num2==0)System.out.println("Godina broj 0 ne postoji");
+		if( (num1<0 || num2<0)) System.out.println("Broj mora biti pozitivan, racunaju se samo godine poslije nove ere");}
 		catch(Exception e){
 			//ispis poruke u slucaju exceptiona
 			System.out.println("Pogresan unos, pokusaj ponovo");
@@ -38,6 +39,7 @@ public class Zadatak2 {
 				if (count%10==0)System.out.println();	
 			}
 		}
+		input.close();
 
 	}
 
