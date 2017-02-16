@@ -28,23 +28,21 @@ public class Calendar {
     
     public static void CalenarPrint(int year, int month){
        
-    	
-        
-        // months[i] = name of month i
+        //String sa imenima mjeseci
         String[] months = {
-            "",                               // leave empty so that months[1] = "January"
+            "",                              
             "January", "February", "March",
             "April", "May", "June",
             "July", "August", "September",
             "October", "November", "December"
         };
 
-        // days[i] = number of days in month i
+        //String sa max brojevima dana u mjesecima
         int[] days = {
             0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
         };
 
-        // check for leap year
+        //Provjera da je godina prestupna
         if (month == 2 && isLeapYear(year)) days[month] = 29;
 
 
@@ -67,6 +65,7 @@ public class Calendar {
         
   }
     public static int count(int year,int month){
+    	//brojac dana u mjesecu
     	int count=0;
     	int[] days = {
                 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
@@ -75,7 +74,7 @@ public class Calendar {
         
         for (int i = 1; i <= days[month]; i++) {
         	count++;
-    	
+    	//vraca max broj dana izabranog mjeseca
     }return count;
     }
     
@@ -83,6 +82,7 @@ public class Calendar {
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		ArrayList<String> reminder=new ArrayList<>();
+		//Path of file
 		Path path=Paths.get("src/Podsjetnik.txt");
 		if(!Files.exists(path)){Files.createFile(path);}
 		Filee file1=new Filee(reminder,"Podsjetnik.txt");
@@ -93,7 +93,7 @@ public class Calendar {
 		Scanner input=new Scanner(System.in);
 		boolean process1=true;
 		
-		
+		//unos podataka, while do (try catch) blok za kontrolu
 		while(process1){do {try{ 
 			System.out.println("Enter number of year and month, respectively ");
          year=input.nextInt(); 
@@ -111,12 +111,11 @@ public class Calendar {
 			System.out.println("Wrong input");
 			input.nextLine();
 		}}while(process);
+		//Print calendar
 		CalenarPrint(year, month); 
-		
-		
-         
+
          int option=0;
-         
+         //Unos podataka, izbor od 0 do 2
         do{try{ System.out.println("\nEnter one number \nIf you want to add reminder for this month choose: 0\n"
         		+ "If you want to choose calendar for another month choose: 1\n"
         		+ "If you want to exit choose: 2");
@@ -131,7 +130,7 @@ public class Calendar {
  			input.nextLine();
  		}}while(process);
         int dayReminder=0; 
-        
+        //U slucaju izbora 0 ispis
         if (option==0){				
         	process=true;
         	do {
@@ -149,27 +148,29 @@ public class Calendar {
         				 System.out.println("Wrong input");
         				 input.nextLine();
         				 }}while(process);
-        								 
+           //upis podsjetnika							 
            System.out.println("Enter your reminder:");
            input.nextLine();
  	       String obligation=input.nextLine();							 
-       
+       //String podjetnika
         String remindS=dayReminder+"."+month+"."+year+"-"+obligation;
        
-        	
+        //Upis podsjetika u file	
         file1.add(remindS);
         process1=false;
        
         }		
-        	
+        //U slucaju opcije 1 referentna varijabla je true, proces se ponavlja	
          if (option==1){
         	process1=true;
         } 
+         //U slucaju opcije 2 ispis poruke i zac=vrsavanje programa sa radom
         if(option==2){
         	process1=false;
         	System.out.println("Bye");
         	System.exit(1);
         }
+        //Ispis podsjetnika
         System.out.println("Vasi podsjetnici : \n");
                 for (int i=0;i<reminder.size();i++){
         	    

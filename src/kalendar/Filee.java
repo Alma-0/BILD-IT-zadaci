@@ -11,6 +11,7 @@ import java.util.ArrayList;
 public class Filee {
 	 ArrayList<String> reminder;
 	 String remindS1;
+	 //slanje argumenata, arrayListe za pohranu podsjetnika i unesenog podsjetnika
 	public Filee(ArrayList<String> reminder, String remindS1) {
 
 		this.reminder = reminder;
@@ -34,6 +35,7 @@ public class Filee {
 	}
 	
 	public void add(String remindS) throws IOException{
+		//Dodavanje unsenog stringa listi
 	    reminder.add(remindS);
 		Path path=Paths.get(remindS1);
 		try (BufferedWriter writer=Files.newBufferedWriter(path)){
