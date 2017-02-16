@@ -10,11 +10,11 @@ import java.util.ArrayList;
 
 public class Filee {
 	 ArrayList<String> reminder;
-	 String remindS;
-	public Filee(ArrayList<String> reminder, String remindS) {
+	 String remindS1;
+	public Filee(ArrayList<String> reminder, String remindS1) {
 
 		this.reminder = reminder;
-		this.remindS = remindS;
+		this.remindS1 = remindS1;
 	}
 	
 	public ArrayList<String> getReminder() {
@@ -25,20 +25,17 @@ public class Filee {
 		this.reminder = reminder;
 	}
 
-	public String getRemindS() {
-		return remindS;
+	public String getRemindS1() {
+		return remindS1;
 	}
 
-	public void setRemindS(String remindS) {
-		this.remindS = remindS;
+	public void setRemindS1(String remindS1) {
+		this.remindS1 = remindS1;
 	}
-
 	
 	public void add(String remindS) throws IOException{
 	    reminder.add(remindS);
-		Path path=Paths.get(remindS);
-		
-		//pomocu Bufferedwritera upisi u fajl elemente iz liste
+		Path path=Paths.get(remindS1);
 		try (BufferedWriter writer=Files.newBufferedWriter(path)){
 			for(int i=0;i<reminder.size();i++){
 				writer.write(reminder.get(i));
@@ -50,16 +47,11 @@ public class Filee {
 		}
 		
 	}
-	//metoda ispisiIzFajla() kojom iz fajla ubacujem podatke u ArrayList
-	public  void ispisiIzFajlaUListu(){
-		//pristup fajlu 
-		Path path=Paths.get(remindS);
-		//pomocu BufferedReadera citam iz fajla
+	
+	public  void write(){
+		Path path=Paths.get(remindS1);
     try(BufferedReader reader=Files.newBufferedReader(path)) {
-			//varijabla za linije u fajlu
 			String line;
-			
-			//sve dok vrijednost nije null citaj i ubacuj u listu
 			while((line=reader.readLine())!=null){
 			reminder.add(line);	
 			}
@@ -71,4 +63,5 @@ public class Filee {
 
 }
 
+}
 }

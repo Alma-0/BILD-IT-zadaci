@@ -1,10 +1,13 @@
 package kalendar;
 
 import java.util.Scanner;
+
+
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
-
-
 
 public class Calendar {
 	
@@ -24,7 +27,7 @@ public class Calendar {
     }
     
     public static void CalenarPrint(int year, int month){
-  	  
+       
     	
         
         // months[i] = name of month i
@@ -57,47 +60,41 @@ public class Calendar {
         for (int i = 0; i < d; i++)
         	System.out.print("    ");
         for (int i = 1; i <= days[month]; i++) {
-        	System.out.printf("%3d ", i);
+        	System.out.printf("%3d ", i); 
             if (((i + d) % 7 == 0) || (i == days[month])) System.out.println();
-            
+          
         }
+        
   }
-    public static void choice(){
-    	boolean process=true;
-		int year=0;
-		int month=0;
-		Scanner input=new Scanner(System.in);
-		do {try{ 
-			System.out.println("Enter number of year and month, respectively ");
-         year=input.nextInt(); 
-         month=input.nextInt();
-         process=false;
-         if(year<=0 || month<=0) {
-        	 System.out.println("number must be greater than 0");
-        	 process=true;
-         }
-         if (month>12) {
-        	 System.out.println("Choose number between 1 and 12 - interval [1,12]");
-        	 process=true;
-         } 
-		}catch(Exception e){
-			System.out.println("Wrong input");
-			input.nextLine();
-		}}while(process);
-		CalenarPrint(year, month); 
-		
+    public static int count(int year,int month){
+    	int count=0;
+    	int[] days = {
+                0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
+            };
+        // print the calendar
+        
+        for (int i = 1; i <= days[month]; i++) {
+        	count++;
+    	
+    }return count;
     }
+    
     
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		ArrayList<String> reminder=new ArrayList<>();
+		Path path=Paths.get("src/Podsjetnik.txt");
+		if(!Files.exists(path)){Files.createFile(path);}
+		Filee file1=new Filee(reminder,"Podsjetnik.txt");
+		file1.write();
 		boolean process=true;
 		int year=0;
 		int month=0;
 		Scanner input=new Scanner(System.in);
+		boolean process1=true;
 		
 		
-		do {try{ 
+		while(process1){do {try{ 
 			System.out.println("Enter number of year and month, respectively ");
          year=input.nextInt(); 
          month=input.nextInt();
@@ -115,7 +112,8 @@ public class Calendar {
 			input.nextLine();
 		}}while(process);
 		CalenarPrint(year, month); 
-        
+		
+		
          
          int option=0;
          
@@ -144,6 +142,9 @@ public class Calendar {
         			if(dayReminder<=0){
         				System.out.println("Number must be grater than 0");
         				process=true;}
+        			if(dayReminder>count(year,month)){
+        				System.out.println("This month has just "+count(year,month)+"days");
+        				process=true;}
         			}catch(Exception e){ 
         				 System.out.println("Wrong input");
         				 input.nextLine();
@@ -153,23 +154,30 @@ public class Calendar {
            input.nextLine();
  	       String obligation=input.nextLine();							 
        
-        String remind=dayReminder+"."+month+"."+year+"-"+obligation;
-        //ispis 
-        System.out.println(remind);
-        Filee file1=new Filee(reminder, remind);						
-        file1.add(remind);
+        String remindS=dayReminder+"."+month+"."+year+"-"+obligation;
+       
+        	
+        file1.add(remindS);
+        process1=false;
        
         }		
         	
          if (option==1){
-        	choice();
+        	process1=true;
         } 
         if(option==2){
+        	process1=false;
         	System.out.println("Bye");
         	System.exit(1);
         }
-        
-       input.close();
+        System.out.println("Vasi podsjetnici : \n");
+                for (int i=0;i<reminder.size();i++){
+        	    
+        	    	 System.out.println(reminder.get(i)+" ");
+        	    	 
+        	      }
+                  System.out.println("\n");}
+               input.close();
         	
         
         	}
