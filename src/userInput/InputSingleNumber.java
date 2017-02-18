@@ -9,7 +9,7 @@ public class InputSingleNumber {
 	int from, to;
 	
 	
-	public static int  inputNumber(Scanner scan,int from, int to){
+	public int  inputNumber(Scanner scan,int from, int to){
 		while(true){
 			try{
 				int input=scan.nextInt();
@@ -23,7 +23,7 @@ public class InputSingleNumber {
 		}
 	}
 	
-	public static int  inputNumber(Scanner scan, int to){
+	public int  inputNumber(Scanner scan, int to){
 		while(true){
 			try{
 				int input=scan.nextInt();
@@ -37,7 +37,7 @@ public class InputSingleNumber {
 		}
 	}
 	
-	public static int inputNumber(Scanner scan){
+	public  int inputNumber(Scanner scan){
 		while(true){
 			try{
 				return scan.nextInt();
