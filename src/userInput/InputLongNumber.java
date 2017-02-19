@@ -1,20 +1,19 @@
 package userInput;
 
-
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class InputSingleNumber {
+public class InputLongNumber {
 	Scanner scan;
 	int from, to;
 	
 	
-	public static int  inputNumber(Scanner scan,int from, int to){
+	public static long inputNumber(Scanner scan,int from, int to){
 		while(true){
 			try{
-				int input=scan.nextInt();
+				long input=scan.nextLong();
 				if(input<from || input>to)
-					throw new InputMismatchException("not in range");
+					throw new InputMismatchException("Not in range");
 				return input;
 			} catch(InputMismatchException e){
 				System.out.println(e.getMessage()==null ? "wrong input":e.getMessage()+"try again");
@@ -23,12 +22,12 @@ public class InputSingleNumber {
 		}
 	}
 	
-	public static int  inputNumber(Scanner scan, int to){
+	public static long inputNumber(Scanner scan, long to){
 		while(true){
 			try{
-				int input=scan.nextInt();
+				long input=scan.nextLong();
 				if(input<=0)
-					throw new InputMismatchException("not in range");
+					throw new InputMismatchException("Not in range");
 				return input;
 			} catch(InputMismatchException e){
 				System.out.println(e.getMessage()==null ? "wrong input":e.getMessage()+" try again");
@@ -37,7 +36,7 @@ public class InputSingleNumber {
 		}
 	}
 	
-	public static int inputNumber(Scanner scan){
+	public static  long inputNumber(Scanner scan){
 		while(true){
 			try{
 				return scan.nextInt();
