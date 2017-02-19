@@ -31,8 +31,14 @@ public class Zadatak1 {
 			//preostale karaktereu mala slova
 			if (result) {
 				city = city.toLowerCase();
-				char first = Character.toUpperCase(city.charAt(0));
-				cities.add(first + city.substring(1));
+				String [] city1=city.split(" ");
+				String city2="";
+				for (int z=0;z<city1.length;z++){
+					char first = Character.toUpperCase(city1[z].charAt(0));
+					city2+=(first + city1[z].substring(1)+" ");
+				}
+				
+				cities.add(city2);
 			}
 
 		}
