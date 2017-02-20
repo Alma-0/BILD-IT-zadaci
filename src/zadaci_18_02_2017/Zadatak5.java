@@ -26,18 +26,17 @@ public class Zadatak5 {
 					countNeg++;
 				else
 					countPoz++;
-			} else
-				// Ukoliko je broj 0 prekid rada
-				System.out.println("You didn't input numbers");
-			break;
+			} else break;
 
 		}
-		double average = sum / (countNeg + countPoz);
+		
+		double average= sum / (countNeg + countPoz);
 		// Ispis rezultata
 		System.out.println(
 				"The number of positive numbers is: " + countPoz + ". The number of negative numbers is: " + countNeg);
 		System.out.println("Sum of numbers is " + sum + ", average of numbers is " + average);
 
+		
 	}
 
 }
