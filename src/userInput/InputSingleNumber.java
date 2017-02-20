@@ -23,7 +23,7 @@ public class InputSingleNumber {
 		}
 	}
 	
-	public static int  inputNumber(Scanner scan, int to){
+	public static int  inputNumber(Scanner scan, int from){
 		while(true){
 			try{
 				int input=scan.nextInt();
