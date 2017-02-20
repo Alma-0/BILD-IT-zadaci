@@ -5,7 +5,7 @@ public class Zadatak1 {
 	public static void main(String[] args) {
 		// Ispis 3 random velika slova
 		for (int i = 0; i < 3; i++) {
-			int num = (int) (Math.random() * 25 + 65);
+			int num = (int) (Math.random() * 25 + 65); 
 			System.out.print((char) num);
 		}
 		// Ispis crtice

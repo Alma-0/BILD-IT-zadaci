@@ -18,7 +18,7 @@ public class Zadatak2 {
 			num1 = temp;
 		}
 		int min = 1;
-		// Nalazenje najmanjeg zajednickog djelioca veceg od 1
+		// Nalazenje najmanjeg zajednickog djelioca veceg od 1 
 		for (int i = 2; i <= num1; i++) {
 			if (num1 % i == 0 && num2 % i == 0) {
 				min = i;

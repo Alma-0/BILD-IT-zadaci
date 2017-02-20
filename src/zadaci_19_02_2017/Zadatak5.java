@@ -17,14 +17,14 @@ public class Zadatak5 {
 			// unos podatka
 			System.out.print("Enter one number, in interval [0,100], zero breaks array");
 			int num = InputSingleNumber.inputNumber(input, 0, 100);
-			// ukoliko je uneseni broj 0, radnja se prekida
+			// ukoliko je  uneseni broj 0, radnja se prekida
 			if (num == 0)
 				break;
 			else {
 				// ukoliko broj vec nije u listi dodajemo ga
 				if (!list.contains(num)) {
 					list.add(num);
-				}
+				} 
 				array[num]++;
 
 			}

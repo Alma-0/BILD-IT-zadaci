@@ -9,8 +9,8 @@ public class Zadatak4 {
 
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		// Unos podataka
-		System.out.println("Enter two integer numbers");
+		// Unos podataka 
+		System.out.println ("Enter two integer numbers");
 		int num1 = InputSingleNumber.inputNumber(input);
 		int num2 = InputSingleNumber.inputNumber(input);
 		int num3 = InputSingleNumber.inputNumber(input);

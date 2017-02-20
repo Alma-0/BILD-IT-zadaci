@@ -12,7 +12,7 @@ public class Zadatak3 {
 				count++;
 				// Ukoliko je ispisano 10 brojeva u jednom redu, prelazi u
 				// sljedeci red, radi preglednijeg ispisa
-				if (count % 10 == 0)
+				if (count % 10 == 0) 
 					System.out.println();
 			}
 		}
