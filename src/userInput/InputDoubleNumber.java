@@ -3,17 +3,17 @@ package userInput;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class InputLongNumber {
+public class InputDoubleNumber {
 	Scanner scan;
 	int from, to;
 	
 	
-	public static long inputNumber(Scanner scan,int from, int to){
+	public static double  inputNumber(Scanner scan,int from, int to){
 		while(true){
 			try{
-				long input=scan.nextLong();
+				double input=scan.nextDouble();
 				if(input<from || input>to)
-					throw new InputMismatchException("Not in range");
+					throw new InputMismatchException("not in range");
 				return input;
 			} catch(InputMismatchException e){
 				System.out.println(e.getMessage()==null ? "wrong input":e.getMessage()+"try again");
@@ -22,12 +22,12 @@ public class InputLongNumber {
 		}
 	}
 	
-	public static long inputNumber(Scanner scan, long to){
+	public static double  inputNumber(Scanner scan, int from){
 		while(true){
 			try{
-				long input=scan.nextLong();
+				double input=scan.nextDouble();
 				if(input<=0)
-					throw new InputMismatchException("Not in range");
+					throw new InputMismatchException("not in range");
 				return input;
 			} catch(InputMismatchException e){
 				System.out.println(e.getMessage()==null ? "wrong input":e.getMessage()+" try again");
@@ -36,10 +36,10 @@ public class InputLongNumber {
 		}
 	}
 	
-	public static  long inputNumber(Scanner scan){
+	public static double inputNumber(Scanner scan){
 		while(true){
 			try{
-				return scan.nextLong();
+				return scan.nextDouble();
 			}catch(InputMismatchException e){
 				System.out.println("Wrong input, try again");
 				scan.nextLine();
