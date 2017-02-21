@@ -10,8 +10,8 @@ public class Zadatak4 {
 		// Ispisuje brojeva koji ispunjavaju uslove dok ne bude ispisano ukupno
 		// 100 brojeva
 		while (sum < 100) {
-			// ispis brojeva za koje vrijedi da je i broj i inverzija broja
-			// palindrom
+			// ispis brojeva za koje vrijedi da je i broj i inverzija broja:
+			// palindrom i prost broj
 			if (isPalindrome(number)) {
 				if (isPrime(number) && isPrime(reverse(number))) {
 					System.out.printf("%-6d", number);
