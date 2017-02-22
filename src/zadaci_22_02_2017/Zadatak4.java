@@ -13,7 +13,7 @@ public class Zadatak4 {
 		// Pozivanje metode, ispis sume cifara unesenog broja
 		System.out.println("Sum of digits of number " + sumDigits(number));
 
-	}
+	} 
 
 	public static int sumDigits(long n) {
 		//varijabli n dodjeljujemo apsolutnu vrijednost unesenog broja

@@ -48,7 +48,7 @@ public class Zadatak2 {
 				System.out.println("Racunar je izabrao bunar, nerijeseno je");
 		}
 
-		input.close();
+		input.close(); 
 
 	}
 
