@@ -14,7 +14,7 @@ public class Zadatak1 {
 		double bill = InputDoubleNumber.inputNumber(input, 0);
 		System.out.println("Unesite procenat racuna, koji zelite dati kao napojnicu");
 		// Unos vrijednosti napojnice u procentima(cijeli ili decimalni broj)
-		double tip = InputDoubleNumber.inputNumber(input, 0);
+		double tip = InputDoubleNumber.inputNumber(input);
 		if (tip < 5 || tip > 15)
 			System.out.println("Preporuka za napojnicu: 5-15 % od iznosa racuna");
 		double totalTip = (tip / 100) * bill;
