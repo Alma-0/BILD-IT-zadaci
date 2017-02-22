@@ -46,5 +46,20 @@ public class InputDoubleNumber {
 			}
 		}
 	}
+		
+		public static double  inputNumberNull(Scanner scan, int from){
+			while(true){
+				try{
+					double input=scan.nextDouble();
+					if(input<0)
+						throw new InputMismatchException("not in range");
+					return input;
+				} catch(InputMismatchException e){
+					System.out.println(e.getMessage()==null ? "wrong input":e.getMessage()+" try again");
+					scan.nextLine();
+				}
+			}
+		}
+	
 
 }
