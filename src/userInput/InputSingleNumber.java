@@ -17,7 +17,7 @@ public class InputSingleNumber {
 					throw new InputMismatchException("not in range");
 				return input;
 			} catch(InputMismatchException e){
-				System.out.println(e.getMessage()==null ? "wrong input":e.getMessage()+"try again");
+				System.out.println(e.getMessage()==null ? "wrong input":e.getMessage()+" try again");
 				scan.nextLine();
 			}
 		}
