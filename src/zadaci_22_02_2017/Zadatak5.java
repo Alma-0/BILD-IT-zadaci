@@ -8,9 +8,10 @@ public class Zadatak5 {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		// Ispis poruke. Unos dimenzije kvadratne matrice
-		System.out.println("Unesi broj redova kvadratne matrice");
+		System.out.println("Unesi broj redova kvadratne matrice, broj treba biti u intervalu [1,100]");
 		// Unos broja veceg od nule
-		int number = InputSingleNumber.inputNumber(input, 0);
+		int number = InputSingleNumber.inputNumber(input, 1,100);
+		System.out.println("Matrica: ");
 		printMatrix(number);
 
 	}
