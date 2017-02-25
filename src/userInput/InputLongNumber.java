@@ -8,7 +8,7 @@ public class InputLongNumber {
 	int from, to;
 	
 	
-	public static long inputNumber(Scanner scan,int from, int to){
+	public static long inputNumber(Scanner scan,long from, long to){
 		while(true){
 			try{
 				long input=scan.nextLong();
