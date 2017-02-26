@@ -8,10 +8,10 @@ public class Zadatak3 {
 
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		System.out.println("Unesite broje clanova niza, interval [1,1000]");
+		System.out.println("Unesite broj clanova niza, interval [1,1000]");
 		int count = InputSingleNumber.inputNumber(input, 1, 1000);
 		int[] array = new int[count];
-		System.out.println("Unesite "+count+" clanova niza, interval[-1000,1000]");
+		System.out.println("Unesite "+count+" clanova niza,cijeli brojevi interval[-1000,1000]");
 		
 		for(int i=0;i<array.length;i++){
 			array[i]=InputSingleNumber.inputNumber(input, -1000, 1000);
