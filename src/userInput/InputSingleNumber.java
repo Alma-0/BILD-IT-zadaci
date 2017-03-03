@@ -11,6 +11,7 @@ public class InputSingleNumber {
 		while (true) {
 			try {
 				int input = scan.nextInt();
+
 				if (input < from || input > to)
 					throw new InputMismatchException("not in range");
 				return input;
@@ -26,10 +27,12 @@ public class InputSingleNumber {
 	public static int inputNumber(Scanner scan, int from) {
 		while (true) {
 			try {
-				int input = scan.nextInt();
+				long input = scan.nextLong();
 				if (input <= 0)
 					throw new InputMismatchException("not in range");
-				return input;
+				else if (input > Integer.MAX_VALUE)
+					System.err.printf("Number is not in range, enter smaller number than %d", Integer.MAX_VALUE);
+				return (int) input;
 			} catch (InputMismatchException e) {
 				System.out.println(e.getMessage() == null ? "wrong input" : e.getMessage() + " try again");
 				scan.nextLine();
@@ -40,9 +43,17 @@ public class InputSingleNumber {
 	public static int inputNumber(Scanner scan) {
 		while (true) {
 			try {
-				return scan.nextInt();
+				long input = scan.nextLong();
+				if (input > Integer.MAX_VALUE)
+					System.err.printf("Number is not in range, enter smaller number than %d\n", Integer.MAX_VALUE);
+
+				else if (input < Integer.MIN_VALUE)
+					System.err.printf("Number is not in range, enter greater number than %d\n", Integer.MIN_VALUE);
+
+				else
+					return (int) input;
 			} catch (InputMismatchException e) {
-				System.out.println("Wrong input, try again");
+				System.out.println("Try again");
 				scan.nextLine();
 			}
 		}
