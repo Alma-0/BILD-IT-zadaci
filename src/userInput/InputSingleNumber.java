@@ -27,12 +27,12 @@ public class InputSingleNumber {
 	public static int inputNumber(Scanner scan, int from) {
 		while (true) {
 			try {
-				long input = scan.nextLong();
-				if (input <= 0)
+				double input = scan.nextDouble();
+				if (input <= from)
 					throw new InputMismatchException("not in range");
 				else if (input > Integer.MAX_VALUE)
 					System.err.printf("Number is not in range, enter smaller number than %d", Integer.MAX_VALUE);
-				return (int) input;
+				else return (int) input;
 			} catch (InputMismatchException e) {
 				System.out.println(e.getMessage() == null ? "wrong input" : e.getMessage() + " try again");
 				scan.nextLine();
