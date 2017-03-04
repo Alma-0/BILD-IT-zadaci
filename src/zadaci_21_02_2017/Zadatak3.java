@@ -4,7 +4,7 @@ public class Zadatak3 {
 
 	public static void main(String[] args) {
 		int sum = 0;
-		int number = 1;
+		int number = 2;
 		// Radnja se nastavlja dok ne bude ispisano 100 brojeva
 		while (sum < 100) {
 			// ispis broja ukoliko je jedinstven i ukoliko je njegova inverzija
