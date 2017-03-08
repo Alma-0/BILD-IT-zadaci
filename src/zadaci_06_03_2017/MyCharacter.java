@@ -1,4 +1,4 @@
-package zadaci_06_02_2017;
+package zadaci_06_03_2017;
 
 public class MyCharacter {
 
@@ -20,7 +20,7 @@ public class MyCharacter {
 		return (nChar >= 48 && nChar <= 57);
 	}
 	
-	public static boolean isLetterorDigit(char nChar) {
+	public static boolean isLetterOrDigit(char nChar) {
 		return ((nChar >= 65 && nChar <= 90) || (nChar >= 97 && nChar <= 122)|| (nChar >= 48 && nChar <= 57));
 	}
 

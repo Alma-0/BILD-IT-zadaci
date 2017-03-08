@@ -3,6 +3,7 @@ package zadaci_06_03_2017;
 public class MyString1 {
 	private char[] chars;
 
+
 	public char[] getChars() {
 		return chars;
 	}
