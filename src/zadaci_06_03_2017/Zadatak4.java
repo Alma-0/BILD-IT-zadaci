@@ -64,7 +64,6 @@ public class Zadatak4 {
 		return splitArray;
 	}
 
-	
 	public static boolean checkRegex(String regex) {
 		if (regex.charAt(0) == '[' && regex.charAt(regex.length() - 1) == ']') {
 			return true;
@@ -73,7 +72,6 @@ public class Zadatak4 {
 		return false;
 	}
 
-	// method that return regex
 	public static String getRegex(String regex) {
 		if (checkRegex(regex)) {
 			return regex.substring(1, regex.length() - 1);
