@@ -1,4 +1,4 @@
-package zadaci_06_02_2017;
+package zadaci_06_03_2017;
 
 public class MyString1 {
 	private char[] chars;
