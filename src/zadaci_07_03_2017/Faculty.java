@@ -5,9 +5,9 @@ public class Faculty extends Employee {
 	private int officeHours;
 	private String rank;
 
-	public Faculty(String name, String address, String phone, String email,
+	public Faculty(String name, String address, String phoneNumber, String email,
 			String office, double salary, int officeHours, String rank) {
-		// invoking constructor from parrent class
+		
 		super(name, address, phoneNumber, email, office, salary);
 		this.officeHours = officeHours;
 		this.rank = rank;

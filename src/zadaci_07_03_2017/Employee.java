@@ -37,7 +37,7 @@ public class Employee extends Person {
 	}
 
 	public String toString() {
-		return "Office " + office + ", Salary " + salary + ", hired date: " + dateHired;
+		return super.toString()+"\nOffice: " + office + ", Salary: " + salary + ", hired date: " + dateHired;
 	}
 
 }
