@@ -1,10 +1,5 @@
 package zadaci_07_03_2017;
 
-import java.util.ArrayList;
-import java.util.Scanner;
-
-import userInput.InputSingleNumber;
-
 public class Zadatak2 {
 
 	public static void main(String[] args) {
