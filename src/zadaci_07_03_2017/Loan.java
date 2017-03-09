@@ -46,7 +46,6 @@ public class Loan {
 		this.loanAmount = loanAmount;
 	}
 
-	// method that return monthly payment
 	public double getMonthlyPayment() {
 		double monthlyInterestRate = annualInterestRate / 1200;
 
