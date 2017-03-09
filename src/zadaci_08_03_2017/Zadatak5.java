@@ -12,7 +12,6 @@ public class Zadatak5 {
 		Scanner input = new Scanner(System.in);
 		ArrayList<Integer> list1 = new ArrayList<>();
 		ArrayList<Integer> list2 = new ArrayList<>();
-		
 
 		System.out.println(" Enter five integers for list1");
 		for (int i = 0; i < 5; i++) {
@@ -22,18 +21,16 @@ public class Zadatak5 {
 		for (int i = 0; i < 5; i++) {
 			list2.add(InputSingleNumber.inputNumber(input));
 		}
-		
+
 		ArrayList<Integer> resultList = union(list1, list2);
-		
+		System.out.println("Union: ");
 		resultList.forEach(System.out::println);
-		
-		
 
 	}
 
 	public static ArrayList<Integer> union(ArrayList<Integer> list1, ArrayList<Integer> list2) {
 		ArrayList<Integer> list = new ArrayList<>();
-		
+
 		list.addAll(list1);
 		list.addAll(list2);
 		return list;
